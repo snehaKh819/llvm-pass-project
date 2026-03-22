@@ -1,0 +1,8 @@
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/intrinsics_gen.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/omp_gen.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/acc_gen.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/RISCVTargetParserTableGen.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/edit_cache.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/rebuild_cache.dir
