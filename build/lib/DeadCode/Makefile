@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"DeadCodeElimination\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode//CMakeFiles/progress.marks
@@ -116,6 +161,72 @@ depend:
 	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule
+.PHONY : lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule
+
+# Convenience name for target.
+DeadCodeElimination: lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule
+.PHONY : DeadCodeElimination
+
+# fast build rule for target.
+DeadCodeElimination/fast:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build
+.PHONY : DeadCodeElimination/fast
+
+# Convenience name for target.
+lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir/rule:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir/rule
+.PHONY : lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir/rule
+
+# Convenience name for target.
+install-DeadCodeElimination: lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir/rule
+.PHONY : install-DeadCodeElimination
+
+# fast build rule for target.
+install-DeadCodeElimination/fast:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir/build
+.PHONY : install-DeadCodeElimination/fast
+
+# Convenience name for target.
+lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir/rule:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir/rule
+.PHONY : lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir/rule
+
+# Convenience name for target.
+install-DeadCodeElimination-stripped: lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir/rule
+.PHONY : install-DeadCodeElimination-stripped
+
+# fast build rule for target.
+install-DeadCodeElimination-stripped/fast:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir/build.make lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir/build
+.PHONY : install-DeadCodeElimination-stripped/fast
+
+DeadCodeElimination.o: DeadCodeElimination.cpp.o
+.PHONY : DeadCodeElimination.o
+
+# target to build an object file
+DeadCodeElimination.cpp.o:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o
+.PHONY : DeadCodeElimination.cpp.o
+
+DeadCodeElimination.i: DeadCodeElimination.cpp.i
+.PHONY : DeadCodeElimination.i
+
+# target to preprocess a source file
+DeadCodeElimination.cpp.i:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.i
+.PHONY : DeadCodeElimination.cpp.i
+
+DeadCodeElimination.s: DeadCodeElimination.cpp.s
+.PHONY : DeadCodeElimination.s
+
+# target to generate assembly for a file
+DeadCodeElimination.cpp.s:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.s
+.PHONY : DeadCodeElimination.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -123,7 +234,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... install-DeadCodeElimination"
+	@echo "... install-DeadCodeElimination-stripped"
+	@echo "... DeadCodeElimination"
+	@echo "... DeadCodeElimination.o"
+	@echo "... DeadCodeElimination.i"
+	@echo "... DeadCodeElimination.s"
 .PHONY : help
 
 

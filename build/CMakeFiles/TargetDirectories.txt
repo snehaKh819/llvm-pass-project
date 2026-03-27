@@ -4,5 +4,16 @@
 /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/RISCVTargetParserTableGen.dir
 /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/edit_cache.dir
 /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/list_install_components.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/install.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/install/local.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles/install/strip.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/DeadCodeElimination.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir
 /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/edit_cache.dir
 /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/list_install_components.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/install.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/install/local.dir
+/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/install/strip.dir

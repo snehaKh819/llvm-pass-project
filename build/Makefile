@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"DeadCodeElimination\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build//CMakeFiles/progress.marks
@@ -168,6 +213,45 @@ RISCVTargetParserTableGen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RISCVTargetParserTableGen.dir/build.make CMakeFiles/RISCVTargetParserTableGen.dir/build
 .PHONY : RISCVTargetParserTableGen/fast
 
+#=============================================================================
+# Target rules for targets named DeadCodeElimination
+
+# Build rule for target.
+DeadCodeElimination: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DeadCodeElimination
+.PHONY : DeadCodeElimination
+
+# fast build rule for target.
+DeadCodeElimination/fast:
+	$(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build
+.PHONY : DeadCodeElimination/fast
+
+#=============================================================================
+# Target rules for targets named install-DeadCodeElimination
+
+# Build rule for target.
+install-DeadCodeElimination: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 install-DeadCodeElimination
+.PHONY : install-DeadCodeElimination
+
+# fast build rule for target.
+install-DeadCodeElimination/fast:
+	$(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/install-DeadCodeElimination.dir/build
+.PHONY : install-DeadCodeElimination/fast
+
+#=============================================================================
+# Target rules for targets named install-DeadCodeElimination-stripped
+
+# Build rule for target.
+install-DeadCodeElimination-stripped: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 install-DeadCodeElimination-stripped
+.PHONY : install-DeadCodeElimination-stripped
+
+# fast build rule for target.
+install-DeadCodeElimination-stripped/fast:
+	$(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir/build.make lib/DeadCode/CMakeFiles/install-DeadCodeElimination-stripped.dir/build
+.PHONY : install-DeadCodeElimination-stripped/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -175,11 +259,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... RISCVTargetParserTableGen"
 	@echo "... acc_gen"
+	@echo "... install-DeadCodeElimination"
+	@echo "... install-DeadCodeElimination-stripped"
 	@echo "... intrinsics_gen"
 	@echo "... omp_gen"
+	@echo "... DeadCodeElimination"
 .PHONY : help
 
 
