@@ -1,0 +1,8 @@
+/mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles/intrinsics_gen.dir
+/mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles/omp_gen.dir
+/mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles/acc_gen.dir
+/mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles/edit_cache.dir
+/mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles/rebuild_cache.dir
+/mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode/CMakeFiles/DeadCodeElimination.dir
+/mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode/CMakeFiles/edit_cache.dir
+/mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode/CMakeFiles/rebuild_cache.dir
