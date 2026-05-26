@@ -4,7 +4,11 @@
 #include "llvm/IR/Instruction.h"
 #include "llvm/IR/BasicBlock.h"
 #include "llvm/IR/CFG.h"
+#include "llvm/IR/PassManager.h"
 #include "llvm/Transforms/Utils/Local.h"
+#include "llvm/Passes/PassBuilder.h"
+#include "llvm/Passes/PassPlugin.h"
+#include "llvm/ADT/Statistic.h"
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/raw_ostream.h"
 #include "llvm/ADT/SetVector.h"
@@ -14,13 +18,27 @@ using namespace llvm;
 
 #define DEBUG_TYPE "dce"
 
-char DeadCodeElimination::ID = 0;
+STATISTIC(NumDeadInsts, "Number of dead instructions removed");
+STATISTIC(NumDeadBranches, "Number of same-target branches simplified");
+STATISTIC(NumForwardingBlocks, "Number of forwarding blocks removed");
+STATISTIC(NumDeadStores, "Number of dead stores removed");
+STATISTIC(NumDeadAllocas, "Number of dead allocas removed");
 
-
-
-static RegisterPass<DeadCodeElimination> X("my-dce", 
-                                           "Custom Dead Code Elimination Pass",
-                                           false, false);
+extern "C" LLVM_ATTRIBUTE_WEAK ::llvm::PassPluginLibraryInfo
+llvmGetPassPluginInfo() {
+  return {LLVM_PLUGIN_API_VERSION, "DeadCodeElimination", LLVM_VERSION_STRING,
+          [](PassBuilder &PB) {
+            PB.registerPipelineParsingCallback(
+                [](StringRef Name, FunctionPassManager &FPM,
+                   ArrayRef<PassBuilder::PipelineElement>) {
+                  if (Name == "my-dce") {
+                    FPM.addPass(DeadCodeElimination());
+                    return true;
+                  }
+                  return false;
+                });
+          }};
+}
 
 
 
@@ -45,6 +63,7 @@ bool DeadCodeElimination::DCEInstruction(Instruction *I,
     
     
     I->eraseFromParent();
+    ++NumDeadInsts;
     return true;
   }
   return false;
@@ -99,6 +118,7 @@ bool DeadCodeElimination::eliminateSameTargetBranches(Function &F) {
       BI->eraseFromParent();
       
       Changed = true;
+      ++NumDeadBranches;
       LLVM_DEBUG(dbgs() << "CFG: Replaced with unconditional branch\n");
     }
   }
@@ -206,6 +226,7 @@ bool DeadCodeElimination::eliminateForwardingBlocks(Function &F) {
       BB->eraseFromParent();
       LocalChanged = true;
       Changed = true;
+      ++NumForwardingBlocks;
       LLVM_DEBUG(dbgs() << "CFG: Removed forwarding block\n");
     }
   }
@@ -331,6 +352,7 @@ bool DeadCodeElimination::eliminateDeadStackSlots(Function &F) {
       for (StoreInst *SI : DeadStores) {
         LLVM_DEBUG(dbgs() << "Stack: Removing dead store: " << *SI << "\n");
         SI->eraseFromParent();
+        ++NumDeadStores;
         Changed = true;
       }
       
@@ -338,6 +360,7 @@ bool DeadCodeElimination::eliminateDeadStackSlots(Function &F) {
       if (AI->use_empty()) {
         LLVM_DEBUG(dbgs() << "Stack: Removing dead alloca: " << *AI << "\n");
         AI->eraseFromParent();
+        ++NumDeadAllocas;
         Changed = true;
       }
     }
@@ -349,7 +372,7 @@ bool DeadCodeElimination::eliminateDeadStackSlots(Function &F) {
 
 
 
-bool DeadCodeElimination::runOnFunction(Function &F) {
+PreservedAnalyses DeadCodeElimination::run(Function &F, FunctionAnalysisManager &AM) {
   LLVM_DEBUG(dbgs() << "Running DCE on function: " << F.getName() << "\n");
   
   bool Changed = false;
@@ -385,5 +408,5 @@ bool DeadCodeElimination::runOnFunction(Function &F) {
     LLVM_DEBUG(dbgs() << "DCE: Made changes to function: " << F.getName() << "\n");
   }
   
-  return Changed;
+  return Changed ? PreservedAnalyses::none() : PreservedAnalyses::all();
 }

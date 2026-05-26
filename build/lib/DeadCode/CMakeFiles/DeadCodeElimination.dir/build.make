@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/e/compiler/llvm-pass-project-main
+CMAKE_SOURCE_DIR = /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/e/compiler/llvm-pass-project-main/build
+CMAKE_BINARY_DIR = /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build
 
 # Include any dependencies generated for this target.
 include lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/depend.make
@@ -70,18 +70,18 @@ include lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/progress.make
 include lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/flags.make
 
 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o: lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/flags.make
-lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o: /mnt/e/compiler/llvm-pass-project-main/lib/DeadCode/DeadCodeElimination.cpp
+lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o: /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/lib/DeadCode/DeadCodeElimination.cpp
 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o: lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o"
-	cd /mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o -MF CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o.d -o CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o -c /mnt/e/compiler/llvm-pass-project-main/lib/DeadCode/DeadCodeElimination.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o"
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o -MF CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o.d -o CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o -c /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/lib/DeadCode/DeadCodeElimination.cpp
 
 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.i"
-	cd /mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/compiler/llvm-pass-project-main/lib/DeadCode/DeadCodeElimination.cpp > CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.i
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/lib/DeadCode/DeadCodeElimination.cpp > CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.i
 
 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.s"
-	cd /mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/compiler/llvm-pass-project-main/lib/DeadCode/DeadCodeElimination.cpp -o CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.s
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/lib/DeadCode/DeadCodeElimination.cpp -o CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.s
 
 # Object files for target DeadCodeElimination
 DeadCodeElimination_OBJECTS = \
@@ -92,19 +92,66 @@ DeadCodeElimination_EXTERNAL_OBJECTS =
 
 lib/DeadCode/DeadCodeElimination.so: lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o
 lib/DeadCode/DeadCodeElimination.so: lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMCore.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMSupport.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMAnalysis.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMScalarOpts.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMTransformUtils.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMipo.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMPasses.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMIRReader.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMCodeGen.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMCoroutines.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMipo.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMBitWriter.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMFrontendOpenMP.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMScalarOpts.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMAggressiveInstCombine.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMInstCombine.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMLinker.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMVectorize.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMInstrumentation.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMIRPrinter.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMObjCARCOpts.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMTransformUtils.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMTarget.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMAnalysis.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMProfileData.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMSymbolize.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMDebugInfoPDB.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMDebugInfoMSF.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMDebugInfoDWARF.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMObject.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMIRReader.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMAsmParser.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMBitReader.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMCore.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMRemarks.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMBitstreamReader.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMMCParser.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMTextAPI.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMMC.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMBinaryFormat.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMTargetParser.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMDebugInfoCodeView.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMSupport.a
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/x86_64-linux-gnu/libz.so
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/x86_64-linux-gnu/libzstd.so
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/x86_64-linux-gnu/libtinfo.so
+lib/DeadCode/DeadCodeElimination.so: /usr/lib/llvm-16/lib/libLLVMDemangle.a
 lib/DeadCode/DeadCodeElimination.so: lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module DeadCodeElimination.so"
-	cd /mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DeadCodeElimination.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module DeadCodeElimination.so"
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DeadCodeElimination.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build: lib/DeadCode/DeadCodeElimination.so
 .PHONY : lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build
 
 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/clean:
-	cd /mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode && $(CMAKE_COMMAND) -P CMakeFiles/DeadCodeElimination.dir/cmake_clean.cmake
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode && $(CMAKE_COMMAND) -P CMakeFiles/DeadCodeElimination.dir/cmake_clean.cmake
 .PHONY : lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/clean
 
 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/depend:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/compiler/llvm-pass-project-main /mnt/e/compiler/llvm-pass-project-main/lib/DeadCode /mnt/e/compiler/llvm-pass-project-main/build /mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode /mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/lib/DeadCode /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/depend
 

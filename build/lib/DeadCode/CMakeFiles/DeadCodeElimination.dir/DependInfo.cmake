@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/e/compiler/llvm-pass-project-main/lib/DeadCode/DeadCodeElimination.cpp" "lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o" "gcc" "lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o.d"
+  "/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/lib/DeadCode/DeadCodeElimination.cpp" "lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o" "gcc" "lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/e/compiler/llvm-pass-project-main
+CMAKE_SOURCE_DIR = /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/e/compiler/llvm-pass-project-main/build
+CMAKE_BINARY_DIR = /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles /mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode//CMakeFiles/progress.marks
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles 0
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode//CMakeFiles/progress.marks
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/clean
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/preinstall
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/preinstall
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule
 .PHONY : lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule
 
 # Convenience name for target.
@@ -127,15 +127,30 @@ DeadCodeElimination: lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/rule
 
 # fast build rule for target.
 DeadCodeElimination/fast:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build
 .PHONY : DeadCodeElimination/fast
+
+# Convenience name for target.
+lib/DeadCode/CMakeFiles/dce_tool.dir/rule:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/DeadCode/CMakeFiles/dce_tool.dir/rule
+.PHONY : lib/DeadCode/CMakeFiles/dce_tool.dir/rule
+
+# Convenience name for target.
+dce_tool: lib/DeadCode/CMakeFiles/dce_tool.dir/rule
+.PHONY : dce_tool
+
+# fast build rule for target.
+dce_tool/fast:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/dce_tool.dir/build.make lib/DeadCode/CMakeFiles/dce_tool.dir/build
+.PHONY : dce_tool/fast
 
 DeadCodeElimination.o: DeadCodeElimination.cpp.o
 .PHONY : DeadCodeElimination.o
 
 # target to build an object file
 DeadCodeElimination.cpp.o:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.o
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/dce_tool.dir/build.make lib/DeadCode/CMakeFiles/dce_tool.dir/DeadCodeElimination.cpp.o
 .PHONY : DeadCodeElimination.cpp.o
 
 DeadCodeElimination.i: DeadCodeElimination.cpp.i
@@ -143,7 +158,8 @@ DeadCodeElimination.i: DeadCodeElimination.cpp.i
 
 # target to preprocess a source file
 DeadCodeElimination.cpp.i:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.i
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.i
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/dce_tool.dir/build.make lib/DeadCode/CMakeFiles/dce_tool.dir/DeadCodeElimination.cpp.i
 .PHONY : DeadCodeElimination.cpp.i
 
 DeadCodeElimination.s: DeadCodeElimination.cpp.s
@@ -151,8 +167,33 @@ DeadCodeElimination.s: DeadCodeElimination.cpp.s
 
 # target to generate assembly for a file
 DeadCodeElimination.cpp.s:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.s
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/DeadCodeElimination.cpp.s
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/dce_tool.dir/build.make lib/DeadCode/CMakeFiles/dce_tool.dir/DeadCodeElimination.cpp.s
 .PHONY : DeadCodeElimination.cpp.s
+
+dce_tool.o: dce_tool.cpp.o
+.PHONY : dce_tool.o
+
+# target to build an object file
+dce_tool.cpp.o:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/dce_tool.dir/build.make lib/DeadCode/CMakeFiles/dce_tool.dir/dce_tool.cpp.o
+.PHONY : dce_tool.cpp.o
+
+dce_tool.i: dce_tool.cpp.i
+.PHONY : dce_tool.i
+
+# target to preprocess a source file
+dce_tool.cpp.i:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/dce_tool.dir/build.make lib/DeadCode/CMakeFiles/dce_tool.dir/dce_tool.cpp.i
+.PHONY : dce_tool.cpp.i
+
+dce_tool.s: dce_tool.cpp.s
+.PHONY : dce_tool.s
+
+# target to generate assembly for a file
+dce_tool.cpp.s:
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/dce_tool.dir/build.make lib/DeadCode/CMakeFiles/dce_tool.dir/dce_tool.cpp.s
+.PHONY : dce_tool.cpp.s
 
 # Help Target
 help:
@@ -163,9 +204,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... DeadCodeElimination"
+	@echo "... dce_tool"
 	@echo "... DeadCodeElimination.o"
 	@echo "... DeadCodeElimination.i"
 	@echo "... DeadCodeElimination.s"
+	@echo "... dce_tool.o"
+	@echo "... dce_tool.i"
+	@echo "... dce_tool.s"
 .PHONY : help
 
 
@@ -177,6 +222,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/e/compiler/llvm-pass-project-main/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

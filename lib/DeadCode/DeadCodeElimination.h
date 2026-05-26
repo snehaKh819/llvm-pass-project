@@ -1,7 +1,7 @@
 #ifndef DEADCODEELIMINATION_H
 #define DEADCODEELIMINATION_H
 
-#include "llvm/Pass.h"
+#include "llvm/IR/PassManager.h"
 #include "llvm/ADT/SmallVector.h"
 #include "llvm/ADT/SetVector.h"
 #include <vector>
@@ -18,12 +18,9 @@ namespace llvm {
 
 using namespace llvm;
 
-class DeadCodeElimination : public FunctionPass {
+class DeadCodeElimination : public PassInfoMixin<DeadCodeElimination> {
 public:
-  static char ID;
-  DeadCodeElimination() : FunctionPass(ID) {}
-  
-  bool runOnFunction(Function &F) override;
+  PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
   
 private:
   // Stage 1: Trivial dead instructions

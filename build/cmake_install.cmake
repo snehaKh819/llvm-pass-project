@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/e/compiler/llvm-pass-project-main
+# Install script for directory: /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/e/compiler/llvm-pass-project-main/build/lib/DeadCode/cmake_install.cmake")
+  include("/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/lib/DeadCode/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/e/compiler/llvm-pass-project-main/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

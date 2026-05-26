@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/e/compiler/llvm-pass-project-main/lib/DeadCode
+# Install script for directory: /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/lib/DeadCode
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

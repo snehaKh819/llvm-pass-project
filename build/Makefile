@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/e/compiler/llvm-pass-project-main
+CMAKE_SOURCE_DIR = /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/e/compiler/llvm-pass-project-main/build
+CMAKE_BINARY_DIR = /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles /mnt/e/compiler/llvm-pass-project-main/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/e/compiler/llvm-pass-project-main/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/sneha/OneDrive/Desktop/llvm-pass-project/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -156,6 +156,19 @@ acc_gen/fast:
 .PHONY : acc_gen/fast
 
 #=============================================================================
+# Target rules for targets named RISCVTargetParserTableGen
+
+# Build rule for target.
+RISCVTargetParserTableGen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RISCVTargetParserTableGen
+.PHONY : RISCVTargetParserTableGen
+
+# fast build rule for target.
+RISCVTargetParserTableGen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RISCVTargetParserTableGen.dir/build.make CMakeFiles/RISCVTargetParserTableGen.dir/build
+.PHONY : RISCVTargetParserTableGen/fast
+
+#=============================================================================
 # Target rules for targets named DeadCodeElimination
 
 # Build rule for target.
@@ -168,6 +181,19 @@ DeadCodeElimination/fast:
 	$(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build.make lib/DeadCode/CMakeFiles/DeadCodeElimination.dir/build
 .PHONY : DeadCodeElimination/fast
 
+#=============================================================================
+# Target rules for targets named dce_tool
+
+# Build rule for target.
+dce_tool: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dce_tool
+.PHONY : dce_tool
+
+# fast build rule for target.
+dce_tool/fast:
+	$(MAKE) $(MAKESILENT) -f lib/DeadCode/CMakeFiles/dce_tool.dir/build.make lib/DeadCode/CMakeFiles/dce_tool.dir/build
+.PHONY : dce_tool/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -176,10 +202,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... RISCVTargetParserTableGen"
 	@echo "... acc_gen"
 	@echo "... intrinsics_gen"
 	@echo "... omp_gen"
 	@echo "... DeadCodeElimination"
+	@echo "... dce_tool"
 .PHONY : help
 
 
