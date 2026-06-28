@@ -262,34 +262,33 @@ bool DeadCodeElimination::simplifyControlFlow(Function &F) {
 // Stage 3: Dead Stack Slots (FIXED VERSION)
 
 
-// Check if an alloca instruction has any loads (if not, it's dead)
+
 bool DeadCodeElimination::isAllocaDead(AllocaInst *AI) {
-  // Track if we find any load instruction using this alloca
+  
   bool hasLoad = false;
   
-  // Iterate over all users of this alloca
   for (User *U : AI->users()) {
-    // Check if the user is a load instruction
+    
     if (LoadInst *LI = dyn_cast<LoadInst>(U)) {
       hasLoad = true;
       LLVM_DEBUG(dbgs() << "Stack: Alloca " << AI->getName() 
                         << " has load: " << *LI << "\n");
-      break;  // Found a load, alloca is live
+      break;  
     }
   }
   
-  // Alloca is dead if it has no loads
+  
   return !hasLoad;
 }
 
-// Remove all stores to an alloca that will never be loaded
+
 void DeadCodeElimination::removeDeadStores(AllocaInst *AI) {
-  // Collect all store instructions using this alloca
+  
   SmallVector<StoreInst*, 16> DeadStores;
   
   for (User *U : AI->users()) {
     if (StoreInst *SI = dyn_cast<StoreInst>(U)) {
-      // Check if this store's value is stored to this alloca
+      
       if (SI->getPointerOperand() == AI) {
         DeadStores.push_back(SI);
         LLVM_DEBUG(dbgs() << "Stack: Found dead store: " << *SI << "\n");
@@ -297,18 +296,17 @@ void DeadCodeElimination::removeDeadStores(AllocaInst *AI) {
     }
   }
   
-  // Remove all dead stores
+  
   for (StoreInst *SI : DeadStores) {
     LLVM_DEBUG(dbgs() << "Stack: Removing dead store: " << *SI << "\n");
     SI->eraseFromParent();
   }
 }
 
-// Main driver for dead stack slot elimination (FIXED VERSION)
+
 bool DeadCodeElimination::eliminateDeadStackSlots(Function &F) {
   bool Changed = false;
   
-  // Collect all alloca instructions
   SmallVector<AllocaInst*, 16> Allocas;
   for (BasicBlock &BB : F) {
     for (Instruction &I : BB) {
@@ -318,11 +316,11 @@ bool DeadCodeElimination::eliminateDeadStackSlots(Function &F) {
     }
   }
   
-  // Process each alloca
+  
   for (AllocaInst *AI : Allocas) {
     LLVM_DEBUG(dbgs() << "Stack: Checking alloca: " << AI->getName() << "\n");
     
-    // First, check if this alloca has any load instructions
+    
     bool hasLoad = false;
     for (User *U : AI->users()) {
       if (isa<LoadInst>(U)) {
@@ -332,12 +330,12 @@ bool DeadCodeElimination::eliminateDeadStackSlots(Function &F) {
       }
     }
     
-    // If no loads, all stores to this alloca are dead
+    
     if (!hasLoad) {
       LLVM_DEBUG(dbgs() << "Stack: Alloca " << AI->getName() 
                         << " has no loads, removing all stores\n");
       
-      // Find and remove all stores to this alloca
+      
       SmallVector<StoreInst*, 16> DeadStores;
       for (User *U : AI->users()) {
         if (StoreInst *SI = dyn_cast<StoreInst>(U)) {
@@ -348,7 +346,7 @@ bool DeadCodeElimination::eliminateDeadStackSlots(Function &F) {
         }
       }
       
-      // Remove dead stores
+      
       for (StoreInst *SI : DeadStores) {
         LLVM_DEBUG(dbgs() << "Stack: Removing dead store: " << *SI << "\n");
         SI->eraseFromParent();
@@ -356,7 +354,7 @@ bool DeadCodeElimination::eliminateDeadStackSlots(Function &F) {
         Changed = true;
       }
       
-      // After removing stores, check if alloca has any remaining users
+      
       if (AI->use_empty()) {
         LLVM_DEBUG(dbgs() << "Stack: Removing dead alloca: " << *AI << "\n");
         AI->eraseFromParent();
